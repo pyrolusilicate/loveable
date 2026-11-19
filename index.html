@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#171517">
+  <link rel="icon" href="data:,">
+  <title>я тебя люблю</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section id="entry" aria-labelledby="entry-title">
+    <form id="unlock">
+      <div class="envelope" aria-hidden="true"><i></i></div>
+      <h2 id="entry-title"><label for="word">наше секретное <em>слово</em></label></h2>
+      <input id="word" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" aria-describedby="feedback" required>
+      <p id="feedback" aria-live="polite"></p>
+      <button type="submit">открыть письмо</button>
+    </form>
+  </section>
+  <main hidden>
+    <h1 aria-label="я тебя люблю">
+      <svg viewBox="32 40 1020 230" aria-hidden="true">
+        <defs>
+          <filter id="ink" color-interpolation-filters="sRGB">
+            <feColorMatrix type="matrix" values="0 0 0 0 .96  0 0 0 0 .86  0 0 0 0 .80  -1.2 0 0 0 1"/>
+            <feComposite in2="SourceGraphic" operator="in"/>
+          </filter>
+        </defs>
+        <image href="handwriting.png" width="1086" height="347" filter="url(#ink)"/>
+      </svg>
+    </h1>
+    <figure><svg id="heart" viewBox="-320 -295 640 602" role="img" aria-label="сердце из признаний в любви на разных языках"></svg></figure>
+    <button id="replay" type="button">повторить</button>
+  </main>
+  <footer hidden>для лучшей девушки на свете</footer>
+  <script src="languages.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
