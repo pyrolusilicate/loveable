@@ -13,7 +13,10 @@
     <form id="unlock">
       <div class="envelope" aria-hidden="true"><i></i></div>
       <h2 id="entry-title"><label for="word">наше секретное <em>слово</em></label></h2>
-      <input id="word" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" aria-describedby="feedback" required>
+      <div class="secret-field">
+        <input id="word" type="password" autocomplete="off" autocapitalize="none" spellcheck="false" aria-describedby="feedback" required>
+        <span id="stars" aria-hidden="true"></span>
+      </div>
       <p id="feedback" aria-live="polite"></p>
       <button type="submit">открыть письмо</button>
     </form>
