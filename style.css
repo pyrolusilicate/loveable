@@ -77,10 +77,16 @@ button:focus-visible { outline: 2px solid var(--rose); outline-offset: 4px; }
 }
 #entry-title { margin: 0 auto 32px; font: 400 clamp(42px, 7vw, 60px)/1.04 Georgia, serif; letter-spacing: -.045em; }
 #entry-title em { display: block; color: var(--rose); }
+.secret-field { position: relative; width: 88%; margin-inline: auto; }
+#stars {
+  position: absolute; inset: 0 8px; display: grid; place-content: center;
+  overflow: hidden; white-space: nowrap; pointer-events: none;
+  font: 22px Georgia, serif; letter-spacing: .16em; color: var(--rose);
+}
 #word {
-  width: 88%; min-height: 48px; padding: 8px; background: transparent;
+  width: 100%; min-height: 48px; padding: 8px; background: transparent;
   border: 0; border-radius: 0; border-bottom: 1px solid #946d72;
-  color: var(--ink); text-align: center; font: 24px Georgia, serif;
+  color: transparent; -webkit-text-fill-color: transparent; caret-color: var(--rose); text-align: center; font: 24px Georgia, serif;
 }
 #word:focus { outline: 0; border-color: var(--rose); }
 #feedback { margin: 8px 0 16px; min-height: 18px; color: var(--rose); font: 14px system-ui, sans-serif; }

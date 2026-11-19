@@ -73,7 +73,9 @@ function wordCode(value) {
 
 const word = document.querySelector("#word");
 const feedback = document.querySelector("#feedback");
+const stars = document.querySelector("#stars");
 word.oninput = () => {
+  stars.textContent = "✧".repeat(Array.from(word.value).length);
   word.removeAttribute("aria-invalid");
   feedback.textContent = "";
 };
@@ -87,6 +89,7 @@ document.querySelector("#unlock").onsubmit = event => {
     return;
   }
   word.value = "";
+  stars.textContent = "";
   document.querySelector("#entry").hidden = true;
   document.querySelector("main").hidden = false;
   document.querySelector("footer").hidden = false;
