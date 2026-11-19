@@ -75,7 +75,7 @@ const word = document.querySelector("#word");
 const feedback = document.querySelector("#feedback");
 const stars = document.querySelector("#stars");
 word.oninput = () => {
-  stars.textContent = "✧".repeat(Array.from(word.value).length);
+  stars.textContent = "*".repeat(Array.from(word.value).length);
   word.removeAttribute("aria-invalid");
   feedback.textContent = "";
 };
