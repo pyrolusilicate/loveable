@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#171517">
   <link rel="icon" href="data:,">
   <title>я тебя люблю</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=phrases-1">
 </head>
 <body>
   <section id="entry" aria-labelledby="entry-title">
@@ -22,22 +22,29 @@
     </form>
   </section>
   <main hidden>
-    <h1 aria-label="я тебя люблю">
-      <svg viewBox="32 40 1020 230" aria-hidden="true">
-        <defs>
-          <filter id="ink" color-interpolation-filters="sRGB">
-            <feColorMatrix type="matrix" values="0 0 0 0 .96  0 0 0 0 .86  0 0 0 0 .80  -1.2 0 0 0 1"/>
-            <feComposite in2="SourceGraphic" operator="in"/>
-          </filter>
-        </defs>
-        <image href="handwriting.png" width="1086" height="347" filter="url(#ink)"/>
-      </svg>
+    <h1>
+      <button id="signature" type="button" aria-label="я тебя люблю, рукописная подпись" aria-haspopup="dialog">
+        <svg viewBox="32 40 1020 230" aria-hidden="true">
+          <defs>
+            <filter id="ink" color-interpolation-filters="sRGB">
+              <feColorMatrix type="matrix" values="0 0 0 0 .96  0 0 0 0 .86  0 0 0 0 .80  -1.2 0 0 0 1"/>
+              <feComposite in2="SourceGraphic" operator="in"/>
+            </filter>
+          </defs>
+          <image href="handwriting.png" width="1086" height="347" filter="url(#ink)"/>
+        </svg>
+      </button>
     </h1>
-    <figure><svg id="heart" viewBox="-320 -295 640 602" role="img" aria-label="сердце из признаний в любви на разных языках"></svg></figure>
+    <figure><svg id="heart" viewBox="-320 -295 640 602" role="group" aria-label="сердце из признаний в любви на разных языках"></svg><figcaption>коснись фразы, чтобы узнать язык</figcaption></figure>
     <button id="replay" type="button">повторить</button>
   </main>
+  <dialog id="phrase-card" aria-labelledby="card-phrase" aria-describedby="card-language">
+    <h2 id="card-phrase"></h2>
+    <p id="card-language"></p>
+    <form method="dialog"><button autofocus>закрыть</button></form>
+  </dialog>
   <footer hidden>для лучшей девушки на свете</footer>
-  <script src="languages.js"></script>
-  <script src="app.js"></script>
+  <script src="languages.js?v=phrases-1"></script>
+  <script src="app.js?v=phrases-1"></script>
 </body>
 </html>

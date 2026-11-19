@@ -77,7 +77,9 @@ button:focus-visible { outline: 2px solid var(--rose); outline-offset: 4px; }
 }
 #entry-title { margin: 0 auto 32px; font: 400 clamp(42px, 7vw, 60px)/1.04 Georgia, serif; letter-spacing: -.045em; }
 #entry-title em { display: block; color: var(--rose); }
-.secret-field { position: relative; width: 88%; margin-inline: auto; }
+.secret-field { position: relative; width: 88%; margin-inline: auto; border-bottom: 1px solid #946d72; }
+.secret-field:focus-within { border-color: var(--rose); }
+.secret-field:focus-within #stars:empty::after { content: ""; height: 1em; border-left: 1px solid var(--rose); }
 #stars {
   position: absolute; inset: 0 8px; display: grid; place-content: center;
   overflow: hidden; white-space: nowrap; pointer-events: none;
@@ -85,9 +87,33 @@ button:focus-visible { outline: 2px solid var(--rose); outline-offset: 4px; }
 }
 #word {
   width: 100%; min-height: 48px; padding: 8px; background: transparent;
-  border: 0; border-radius: 0; border-bottom: 1px solid #946d72;
+  border: 0; border-radius: 0; opacity: 0;
   color: transparent; -webkit-text-fill-color: transparent; caret-color: var(--rose); text-align: center; font: 24px Georgia, serif;
 }
-#word:focus { outline: 0; border-color: var(--rose); }
+
 #feedback { margin: 8px 0 16px; min-height: 18px; color: var(--rose); font: 14px system-ui, sans-serif; }
 #unlock button { background: var(--ink); color: #302126; padding-inline: 30px; }
+
+#heart text[role="button"] { cursor: pointer; }
+#heart text[role="button"]:focus-visible { fill: white; outline: 1px solid var(--rose); }
+figcaption { margin-top: 6px; text-align: center; color: #cfb1ad; font: 14px system-ui, sans-serif; }
+#phrase-card {
+  width: min(86vw, 410px); padding: 36px 24px 24px; text-align: center;
+  color: var(--ink); border: 1px solid #79555c; border-radius: 16px;
+  background: linear-gradient(155deg, #39292f, #251d21);
+  box-shadow: 0 18px 80px #100c1080;
+}
+#phrase-card::backdrop { background: #100d10b8; }
+#card-phrase { margin: 0; font: italic 400 clamp(30px, 8vw, 44px)/1.2 Georgia, serif; overflow-wrap: anywhere; }
+#card-language { margin: 12px 0 26px; font: 18px system-ui, sans-serif; color: var(--rose); }
+#phrase-card button { background: var(--ink); color: #302126; }
+
+#signature { display: block; width: 100%; padding: 0; border: 0; background: transparent; }
+#card-language:empty { display: none; }
+#card-language:empty + form { margin-top: 26px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  h1:not(.signed) { visibility: hidden; }
+  h1.signed { animation: sign-letter .7s ease-out; }
+  @keyframes sign-letter { from { opacity: 0; } }
+}
